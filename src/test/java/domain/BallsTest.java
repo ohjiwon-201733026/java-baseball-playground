@@ -109,6 +109,101 @@ public class BallsTest {
         assertThat(result.getStrike()).isEqualTo(0);
     }
 
+    @Test
+    @DisplayName("balls-balls match")
+    public void match_balls_balls_nothing() {
+        Balls answer = new Balls();
+        answer.addBall(1);
+        answer.addBall(2);
+        answer.addBall(3);
+
+        Balls input = new Balls();
+        input.addBall(4);
+        input.addBall(5);
+        input.addBall(6);
+
+        GameTotalResult result = answer.match(input);
+        assertThat(result.getBall()).isEqualTo(0);
+        assertThat(result.getStrike()).isEqualTo(0);
+
+    }
+
+    @Test
+    @DisplayName("balls-balls match")
+    public void match_balls_balls_one_strike() {
+        Balls answer = new Balls();
+        answer.addBall(1);
+        answer.addBall(2);
+        answer.addBall(3);
+
+        Balls input = new Balls();
+        input.addBall(4);
+        input.addBall(2);
+        input.addBall(6);
+
+        GameTotalResult result = answer.match(input);
+        assertThat(result.getBall()).isEqualTo(0);
+        assertThat(result.getStrike()).isEqualTo(1);
+
+    }
+
+    @Test
+    @DisplayName("balls-balls match")
+    public void match_balls_balls_one_ball() {
+        Balls answer = new Balls();
+        answer.addBall(1);
+        answer.addBall(2);
+        answer.addBall(3);
+
+        Balls input = new Balls();
+        input.addBall(4);
+        input.addBall(5);
+        input.addBall(1);
+
+        GameTotalResult result = answer.match(input);
+        assertThat(result.getBall()).isEqualTo(1);
+        assertThat(result.getStrike()).isEqualTo(0);
+
+    }
+
+    @Test
+    @DisplayName("balls-balls match")
+    public void match_balls_balls_one_strike_one_ball() {
+        Balls answer = new Balls();
+        answer.addBall(1);
+        answer.addBall(2);
+        answer.addBall(3);
+
+        Balls input = new Balls();
+        input.addBall(4);
+        input.addBall(2);
+        input.addBall(1);
+
+        GameTotalResult result = answer.match(input);
+        assertThat(result.getBall()).isEqualTo(1);
+        assertThat(result.getStrike()).isEqualTo(1);
+
+    }
+
+    @Test
+    @DisplayName("balls-balls match")
+    public void match_balls_balls_three_strike() {
+        Balls answer = new Balls();
+        answer.addBall(1);
+        answer.addBall(2);
+        answer.addBall(3);
+
+        Balls input = new Balls();
+        input.addBall(1);
+        input.addBall(2);
+        input.addBall(3);
+
+        GameTotalResult result = answer.match(input);
+        assertThat(result.getBall()).isEqualTo(0);
+        assertThat(result.getStrike()).isEqualTo(3);
+
+    }
+
 
 
 }

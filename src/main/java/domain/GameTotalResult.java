@@ -23,4 +23,9 @@ public class GameTotalResult {
             strike++;
         }
     }
+
+    public void addGameResult(GameTotalResult gameTotalResult) {
+        this.strike += gameTotalResult.getStrike();
+        this.ball += gameTotalResult.getBall();
+    }
 }

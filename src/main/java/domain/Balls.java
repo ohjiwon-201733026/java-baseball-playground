@@ -42,4 +42,15 @@ public class Balls {
 
         return result;
     }
+
+    public GameTotalResult match(Balls balls) {
+        GameTotalResult result = new GameTotalResult();
+
+        for(Ball ball : this.balls) {
+            GameTotalResult gameResultPerAnswer = balls.match(ball);
+            result.addGameResult(gameResultPerAnswer);
+        }
+
+        return result;
+    }
 }
