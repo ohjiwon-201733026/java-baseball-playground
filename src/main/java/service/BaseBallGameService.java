@@ -10,7 +10,6 @@ public class BaseBallGameService {
     public void play() {
         Balls answer = AnswerFactory.generate();
         GameTotalResult result = new GameTotalResult();
-        System.out.println(answer.getBalls());
 
         while (!result.isEnd()) {
             Balls userAnswer = AnswerInputView.inputUserAnswer();
