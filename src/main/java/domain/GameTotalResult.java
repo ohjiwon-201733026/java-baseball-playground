@@ -28,4 +28,19 @@ public class GameTotalResult {
         this.strike += gameTotalResult.getStrike();
         this.ball += gameTotalResult.getBall();
     }
+
+    public String getGameTotalResult() {
+
+        if(this.ball == 0 && this.strike == 0) return "낫싱";
+
+        String gameTotalResult = "";
+        if(this.ball > 0) gameTotalResult = this.ball + "볼 ";
+        if(this.strike > 0) gameTotalResult += this.strike + "스트라이크";
+
+        return gameTotalResult;
+    }
+
+    public boolean isEnd() {
+        return this.strike == 3;
+    }
 }
