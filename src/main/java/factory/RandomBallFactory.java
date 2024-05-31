@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class RandomBallFactory {
 
-    public static int generate() {
+    protected static int generate() {
         Random random = new Random();
 
         return random.nextInt(9) + 1;
