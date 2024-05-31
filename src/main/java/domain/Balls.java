@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Balls {
@@ -53,4 +54,21 @@ public class Balls {
 
         return result;
     }
+
+    public boolean isEndGenerateBalls() {
+        return this.getBallCount() == 3;
+    }
+
+    protected Ball getPositionedBall(int pos){
+        return this.balls.get(pos);
+    }
+
+    public static Balls convertToBalls(String strBalls) {
+        Balls balls = new Balls();
+        Arrays.stream(strBalls.split(""))
+                .forEach( ball -> balls.addBall(Integer.parseInt(ball)));
+
+        return balls;
+    }
+
 }

@@ -43,4 +43,8 @@ public class Ball {
         return getPos() == ball.getPos() && getBallNo() == ball.getBallNo();
     }
 
+    public String toString() {
+        return "Ball [pos=" + pos + ", ballNo=" + ballNo + "]";
+    }
+
 }

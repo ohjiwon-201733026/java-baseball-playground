@@ -201,7 +201,18 @@ public class BallsTest {
         GameTotalResult result = answer.match(input);
         assertThat(result.getBall()).isEqualTo(0);
         assertThat(result.getStrike()).isEqualTo(3);
+    }
 
+    @Test
+    @DisplayName("String -> Balls convert")
+    public void convertToBalls() {
+        String strBalls = "123";
+
+        Balls balls = Balls.convertToBalls(strBalls);
+
+        assertThat(balls.getPositionedBall(0).getBallNo()).isEqualTo(1);
+        assertThat(balls.getPositionedBall(1).getBallNo()).isEqualTo(2);
+        assertThat(balls.getPositionedBall(2).getBallNo()).isEqualTo(3);
     }
 
 
