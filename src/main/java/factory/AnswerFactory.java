@@ -1,5 +1,6 @@
+package factory;
+
 import domain.Balls;
-import factory.RandomBallFactory;
 
 public class AnswerFactory {
 
